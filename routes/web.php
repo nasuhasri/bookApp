@@ -31,6 +31,8 @@ Route::middleware('auth')->group(function () {
 
     // books
     Route::get('/books', [BookController::class, 'index'])->name('book.index');
+    Route::get('/books/add', [BookController::class, 'create'])->name('book.create');
+    Route::post('/book/store', [BookController::class, 'store'])->name('book.store');
 });
 
 require __DIR__.'/auth.php';

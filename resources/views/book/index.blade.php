@@ -10,23 +10,36 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     {{ __('Books Index Page') }}
+                    
+                    <a href="{{ route('book.create') }}" class="rounded-full px-2 bg-blue-500">Add Book</a>
 
                     <table class="table-auto mt-5">
                         <thead>
                             <tr>
+                                <th>ID</th>
                                 <th>Author</th>
                                 <th>Title</th>
                                 <th>Genre</th>
                                 <th>Page Count</th>
+                                <th>Created At</th>
+                                <th>Updated At</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($books as $book)
                             <tr>
+                                <td>{{ $book->id }}</td>
                                 <td>{{ $book->author }}</td>
                                 <td>{{ $book->title}}</td>
                                 <td>{{ $book->genre}}</td>
                                 <td>{{ $book->page_count}}</td>
+                                <td>{{ $book->created_at}}</td>
+                                <td>{{ $book->updated_at}}</td>
+                                <td>
+                                    <a href="{{ route('book.create') }}" class="rounded-full px-2 bg-yellow-500">Edit Book</a>
+                                    <a href="{{ route('book.create') }}" class="rounded-full px-2 bg-red-500">Delete Book</a>
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>
