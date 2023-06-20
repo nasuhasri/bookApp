@@ -14,7 +14,7 @@ class BookController extends Controller
     public function index()
     {
         // $books = DB::table('books')->get();
-        $books = Book::select(['id', 'author', 'title', 'genre', 'page_count', 'created_at', 'updated_at'])->get();
+        $books = Book::select(['id', 'author', 'title', 'genre', 'page_count', 'status', 'created_at', 'updated_at'])->get();
 
         return view('book.index', ['books' => $books]);
     }
@@ -42,7 +42,9 @@ class BookController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $book = Book::findOrFail($id);
+
+        return view('book.show', ['book' => $book]);
     }
 
     /**

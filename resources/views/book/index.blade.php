@@ -21,6 +21,7 @@
                                 <th>Title</th>
                                 <th>Genre</th>
                                 <th>Page Count</th>
+                                <th>Status</th>
                                 <th>Created At</th>
                                 <th>Updated At</th>
                                 <th>Action</th>
@@ -29,11 +30,12 @@
                         <tbody>
                             @foreach ($books as $book)
                             <tr>
-                                <td>{{ $book->id }}</td>
+                                <td><a href="{{ route('book.show', ['id' => $book->id]) }}" class="underline decoration-2">#{{ $book->id }}</a></td>
                                 <td>{{ $book->author }}</td>
                                 <td>{{ $book->title}}</td>
                                 <td>{{ $book->genre}}</td>
                                 <td>{{ $book->page_count}}</td>
+                                <td>{{ $book->status}}</td>
                                 <td>{{ $book->created_at}}</td>
                                 <td>{{ $book->updated_at}}</td>
                                 <td>

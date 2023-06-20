@@ -13,6 +13,7 @@ class Book extends Model
         'title',
         'author',
         'genre',
-        'page_count'
+        'page_count',
+        'status' // should include the fillable fields otherwise cannot save to db
     ];
 }

@@ -22,18 +22,30 @@
                         </div>
                         <div>
                             <x-input-label for="author" :value="__('Author')" />
-                            <x-text-input id="author" name="author" type="text" class="mt-1 block w-full" required autofocus autocomplete="author" />
+                            <x-text-input id="author" name="author" type="text" class="mt-1 block w-full" required autocomplete="author" />
                             <x-input-error class="mt-2" :messages="$errors->get('author')" />
                         </div>
                         <div>
                             <x-input-label for="genre" :value="__('Genre')" />
-                            <x-text-input id="genre" name="genre" type="text" class="mt-1 block w-full" required autofocus autocomplete="genre" />
+                            <x-text-input id="genre" name="genre" type="text" class="mt-1 block w-full" required autocomplete="genre" />
                             <x-input-error class="mt-2" :messages="$errors->get('genre')" />
                         </div>
                         <div>
                             <x-input-label for="page_count" :value="__('Page Count')" />
-                            <x-text-input id="page_count" name="page_count" type="number" class="mt-1 block w-full" autofocus autocomplete="page_count" />
+                            <x-text-input id="page_count" name="page_count" type="number" class="mt-1 block w-full" autocomplete="page_count" />
                             <x-input-error class="mt-2" :messages="$errors->get('page_count')" />
+                        </div>
+                        <div>
+                            <x-input-label for="status" :value="__('Status')" />
+                            {{-- <x-text-input id="status" name="status" type="text" class="mt-1 block w-full" autocomplete="status" /> --}}
+
+                            <select id="status" name="status" autocomplete="status"
+                                class="mt-1 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                                <option value="reading">Reading</option>
+                                <option value="read">Read</option>
+                                <option value="to read">To Read</option>
+                            </select>
+                            <x-input-error class="mt-2" :messages="$errors->get('status')" />
                         </div>
                     
                         <div class="flex items-center gap-4">

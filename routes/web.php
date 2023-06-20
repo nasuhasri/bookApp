@@ -33,6 +33,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/books', [BookController::class, 'index'])->name('book.index');
     Route::get('/books/add', [BookController::class, 'create'])->name('book.create');
     Route::post('/book/store', [BookController::class, 'store'])->name('book.store');
+    Route::get('/book/show/{id}', [BookController::class, 'show'])->name('book.show');
 });
 
 require __DIR__.'/auth.php';
