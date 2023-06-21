@@ -41,7 +41,7 @@
                                 <td>
                                     <a href="{{ route('book.edit', $book->id) }}" class="rounded-full px-2 bg-yellow-500">Edit</a>
                                     <a href="{{ route('book.create') }}" class="rounded-full px-2 bg-red-500">Delete</a>
-                                    <a href="#" class="rounded-full px-2 bg-indigo-500">Add Progress</a>
+                                    <a href="{{ route('book.progress-index', ['id' => $book->id]) }}" class="rounded-full px-2 bg-indigo-500">View Progress</a>
                                 </td>
                             </tr>
                             @endforeach

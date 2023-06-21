@@ -11,7 +11,7 @@
                 <div class="p-6 text-gray-900">
                     {{ __("Books Show Page") }}
 
-                    <table>
+                    <table class="mb-5">
                         <tr>
                             <td>ID</td>
                             <td>{{ $book->id }}</td>
@@ -37,6 +37,8 @@
                             <td>{{ $book->status }}</td>
                         </tr>
                     </table>
+
+                    <a href="{{ route('book.index') }}" class="rounded-full px-2 py-2 bg-blue-500">Back</a>
                 </div>
             </div>
         </div>

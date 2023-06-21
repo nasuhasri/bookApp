@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProgressController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,6 +37,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/book/show/{id}', [BookController::class, 'show'])->name('book.show');
     Route::get('/book/edit/{id}', [BookController::class, 'edit'])->name('book.edit');
     Route::post('/book/{id}', [BookController::class, 'update'])->name('book.update');
+
+    // progress
+    Route::get('book/{id}/progress', [ProgressController::class, 'index'])->name('book.progress-index');
+    Route::get('book/{id}/progress/add', [ProgressController::class, 'create'])->name('book.progress-add');
+    Route::post('book/{id}/progress/store', [ProgressController::class, 'store'])->name('book.progress-store');
 });
 
 require __DIR__.'/auth.php';
