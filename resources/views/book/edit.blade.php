@@ -11,28 +11,28 @@
                 <div class="p-6 text-gray-900">
                     {{ __("Books Add Page") }}
 
-                    <form method="post" action="{{ route('book.store') }}" class="mt-6 space-y-6">
+                    <form method="post" action="{{ route('book.update', $book->id) }}" class="mt-6 space-y-6">
                         @csrf
                         {{-- @method('patch') --}}
                     
                         <div>
                             <x-input-label for="title" :value="__('Title')" />
-                            <x-text-input id="title" name="title" type="text" class="mt-1 block w-full" required autofocus autocomplete="title" />
+                            <x-text-input id="title" name="title" type="text" class="mt-1 block w-full" :value="old('title', $book->title)" required autofocus autocomplete="title" />
                             <x-input-error class="mt-2" :messages="$errors->get('title')" />
                         </div>
                         <div>
                             <x-input-label for="author" :value="__('Author')" />
-                            <x-text-input id="author" name="author" type="text" class="mt-1 block w-full" required autocomplete="author" />
+                            <x-text-input id="author" name="author" type="text" class="mt-1 block w-full" :value="old('author', $book->author)" required autocomplete="author" />
                             <x-input-error class="mt-2" :messages="$errors->get('author')" />
                         </div>
                         <div>
                             <x-input-label for="genre" :value="__('Genre')" />
-                            <x-text-input id="genre" name="genre" type="text" class="mt-1 block w-full" required autocomplete="genre" />
+                            <x-text-input id="genre" name="genre" type="text" class="mt-1 block w-full" :value="old('genre', $book->genre)" required autocomplete="genre" />
                             <x-input-error class="mt-2" :messages="$errors->get('genre')" />
                         </div>
                         <div>
                             <x-input-label for="page_count" :value="__('Page Count')" />
-                            <x-text-input id="page_count" name="page_count" type="number" class="mt-1 block w-full" autocomplete="page_count" />
+                            <x-text-input id="page_count" name="page_count" type="number" class="mt-1 block w-full" :value="old('page_count', $book->page_count)" autocomplete="page_count" />
                             <x-input-error class="mt-2" :messages="$errors->get('page_count')" />
                         </div>
                         <div>
@@ -40,9 +40,9 @@
                             <select id="status" name="status" autocomplete="status"
                                 class="mt-1 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
                                 <option value="">Please Select</option>
-                                <option value="reading">Reading</option>
-                                <option value="read">Read</option>
-                                <option value="to read">To Read</option>
+                                <option value="reading" <?= ($book->status === 'reading') ? 'selected' : '' ?>>Reading</option>
+                                <option value="read" <?= ($book->status === 'read') ? 'selected' : '' ?>>Read</option>
+                                <option value="to read" <?= ($book->status === 'to read') ? 'selected' : '' ?>>To Read</option>
                             </select>
                             <x-input-error class="mt-2" :messages="$errors->get('status')" />
                         </div>

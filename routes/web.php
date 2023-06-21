@@ -34,6 +34,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/books/add', [BookController::class, 'create'])->name('book.create');
     Route::post('/book/store', [BookController::class, 'store'])->name('book.store');
     Route::get('/book/show/{id}', [BookController::class, 'show'])->name('book.show');
+    Route::get('/book/edit/{id}', [BookController::class, 'edit'])->name('book.edit');
+    Route::post('/book/{id}', [BookController::class, 'update'])->name('book.update');
 });
 
 require __DIR__.'/auth.php';

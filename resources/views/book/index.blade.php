@@ -39,8 +39,9 @@
                                 <td>{{ $book->created_at}}</td>
                                 <td>{{ $book->updated_at}}</td>
                                 <td>
-                                    <a href="{{ route('book.create') }}" class="rounded-full px-2 bg-yellow-500">Edit Book</a>
-                                    <a href="{{ route('book.create') }}" class="rounded-full px-2 bg-red-500">Delete Book</a>
+                                    <a href="{{ route('book.edit', $book->id) }}" class="rounded-full px-2 bg-yellow-500">Edit</a>
+                                    <a href="{{ route('book.create') }}" class="rounded-full px-2 bg-red-500">Delete</a>
+                                    <a href="#" class="rounded-full px-2 bg-indigo-500">Add Progress</a>
                                 </td>
                             </tr>
                             @endforeach
