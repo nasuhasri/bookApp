@@ -32,7 +32,7 @@
                         </div>
                         <div>
                             <x-input-label for="page_count" :value="__('Page Count')" />
-                            <x-text-input id="page_count" name="page_count" type="number" class="mt-1 block w-full" autocomplete="page_count" />
+                            <x-text-input id="page_count" name="page_count" type="number" class="mt-1 block w-full" autocomplete="page_count" required />
                             <x-input-error class="mt-2" :messages="$errors->get('page_count')" />
                         </div>
                         <div>
