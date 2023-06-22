@@ -11,9 +11,9 @@
                 <div class="p-6 text-gray-900">
                     {{ __("Progress Index") }}
 
-                    <a href="{{ route('book.progress-add', [ 'id' => $book_id ]) }}" class="rounded-full px-2 py-1 bg-blue-500">Add Progress</a>
-
                     @if (count($progress) > 0)
+                        <a href="{{ route('book.progress-add', [ 'id' => $book_id ]) }}" class="rounded-full px-2 py-1 bg-blue-500">Add Progress</a>
+                        
                         <table class="table-auto mt-5 mb-5">
                             <thead>
                                 <tr>
